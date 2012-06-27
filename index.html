@@ -7,7 +7,7 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 
-  <title>PeerStreet - The Startup Exchange Market</title>
+  <title>LandingPage Template - makes life easier</title>
   <meta name="description" content="">
   <meta name="author" content="">
 	<link rel="icon" href="/favicon.ico" type="image/png">
@@ -32,25 +32,30 @@
 			<div id="inner-container"> 
 				<div class="boxed" id="content">
 					<p>introducing</p>
-					<h1>PeerStreet</h1>
-					<h2>The Startup Exchange Market</h2>
+					<h1>LandingPage</h1>
+					<h2>This claim makes you really want this</h2>
 					
 					<div id="introduction">
-					<p>Raising Money as a startup is hard. It requires a notary, money and a tremendous effort. It is too complicated for the mayority of the people. But the popularity of crowdFunding and platforms like secondMarket show that more people are willing to invest into startups.
+					<p>It is hard to create good looking landing pages. But that problems ends now. With this awesome template everyone can create good looking soon-too-launch-startup-pages with just a text editor and an amazon S3 Account.
 					</p><p>
-					<strong>PeerStreet</strong> will allow people to do exactly that easily: raising money, investing in startups, back-finance your portfolio and much more.
-					</p>
+          This <strong>LandingPage</strong> Template will rock your world. With features like <strong>mailchimp-support</strong>, <strong>social sharing</strong> and <strong>full sized backdrops</strong> in a simply and elegant design will make your live much easier.</p>
 					<h2>Join the movement</h2>
-					<p>We can't open the platform just yet, as we are currently working out some legal issues. But if you leave your email address, we'll keep you updated:</p>
+          <p>Just clone the <a href="https://github.com/ligthyear/landing_page_tmpl">Repository</a>, replace all the <strong>__</strong>-Values, fix the text and you are ready to go. </p>
 					</div>
           <div id="mail-wrapper" >
-						<form action="http://kindleforkids.us5.list-manage.com/subscribe/post?u=22e843c796dd7d4e91b577776&amp;id=6956d7f669" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank">
+						<form action="__MAILCHIMP_EASYFORM_REGISTRATION_URL__" class="validate" target="_blank">
 							<input type="text" id="mce-EMAIL" name="EMAIL" required="required" placeholder="Your email address"/> <button id="submit" type="submit" class="btn btn-danger">Submit</button>
 							</form>
 					</div>
+        </div>
+
+				<div id="socialshare" class="boxed">
+					<div id="socialshareprivacy"></div>
 				</div>
+
+
 				<div class="boxed" style="font-size: 10px; padding: 5px; margin-top: 125px;">
-					© 2011-2012 by <a href="http://www.dieBeschleuniger.de">Club der Beschleuniger eG</a>&nbsp;&nbsp;||&nbsp;&nbsp;Picture by <a href="http://www.flickr.com/photos/86315917@N00/3334418695">Illya Bogin</a> on Flickr
+					© 2011-2012 by <a href="__TARGET_URL__">__OWNER__</a>&nbsp;&nbsp;||&nbsp;&nbsp;Picture by <a href="http://www.flickr.com/photos/86315917@N00/3334418695">Illya Bogin</a> on Flickr
 				</div>
 			</div>
     </div>
@@ -71,6 +76,7 @@
 
 	<!-- we should load this with modernizr --> 
   <script src="js/supersized.3.1.3.min.js"></script>
+  <script src="js/jquery.socialshareprivacy.min.js"></script>
   <script src="js/slimbox2.js"></script>
 	<script type="text/javascript">
 		$(function() {
@@ -80,23 +86,32 @@
 					//slides: [{'image': '/img/Red_Lighthouse.jpg'}]
 					//slides: [{'image': '/img/View_From_the_Pier.jpg'}]
 					//slides: [{'image': '/img/hudson-river-park-5.jpg'}]
+          });
+
+      $('#socialshareprivacy').socialSharePrivacy({
+					services: {
+							facebook: {
+									dummy_img : '/socialshareprivacy/images/dummy_facebook_en.png',
+									txt_info: '2-Click-Privacy-Protection-System: Only when you click here, will the sharing be activated and data send to Facebook. Click an second time to share this Page on Facebook.',
+									language: 'en_US'
+							},
+							twitter : {
+								txt_info: 'Tweet this link',
+									txt_info: '2-Click-Privacy-Protection-System: Only when you click here, will the sharing be activated and data send to Twitter. Click an second time to share this Page on Twitter.',
+							},
+							gplus: {
+								txt_info: '2-Click-Privacy-Protection-System: Only when you click here, will the sharing be activated and data send to Google. Click an second time to share this Page on Google+',
+								language: 'en'
+							}
+						}
 				});
 
-				$('#add-email').submit(function() {
-						console.log("submitting");
-						$('#submit').attr("disabled", "disabled");
-						$('#mail-wrapper').load('/post_email',{
-									email: $('#email').val(), 
-									came_from: document.location.hash.slice(1)
-								});
-						return false;
-					});
 
 			});
 	</script>
 
   <script> // Change UA-XXXXX-X to be your site's ID
-    window._gaq = [['_setAccount','UA-29836036-1'],['_trackPageview'],['_trackPageLoadTime']];
+    window._gaq = [['_setAccount','__GOOGLE_ANALYTICS_TRACKING_CODE__'],['_trackPageview'],['_trackPageLoadTime']];
     Modernizr.load({
       load: ('https:' == location.protocol ? '//ssl' : '//www') + '.google-analytics.com/ga.js'
     });

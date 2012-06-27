@@ -113,6 +113,13 @@ a, a:hover, a:visited {
     text-align: justify;
 }
 
+
+#socialshare {
+    margin-top: 30px;
+    padding: 5px 10px;
+}
+
+
 /*
 #email {
     padding: 5px 15px;
